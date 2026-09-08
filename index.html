@@ -1,424 +1,79 @@
 <!DOCTYPE html>
-<html lang="ms">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mohamad Syahmi Bin Abdul Karim - Portfolio</title>
-    <meta name="description" content="Portfolio Mohamad Syahmi Bin Abdul Karim - Aspiring DevOps Engineer | Former IT Executive & Web Developer">
+    <title>Mohamad Syahmi - GitHub Profile</title>
     <style>
-        :root {
-            --bg-color: #0b0f19;
-            --card-bg: rgba(17, 24, 39, 0.75);
-            --card-border: rgba(255, 255, 255, 0.1);
-            --text-main: #f3f4f6;
-            --text-muted: #9ca3af;
-            --accent-cyan: #06b6d4;
-            --accent-blue: #3b82f6;
-            --accent-purple: #8b5cf6;
-            --accent-emerald: #10b981;
-            --badge-bg: rgba(31, 41, 55, 0.7);
-            --badge-border: rgba(255, 255, 255, 0.08);
-            --font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-        }
-
         * {
             box-sizing: border-box;
-            margin: 0;
-            padding: 0;
         }
-
         body {
-            font-family: var(--font-family);
-            background-color: var(--bg-color);
-            color: var(--text-main);
+            background-color: #0d1117;
+            color: #c9d1d9;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 40px 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
             min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 2rem 1rem;
-            position: relative;
-            overflow-x: hidden;
         }
-
-        /* Dynamic background glows */
-        .bg-glow-1 {
-            position: fixed;
-            top: -10%;
-            left: 20%;
-            width: 400px;
-            height: 400px;
-            background: radial-gradient(circle, rgba(6, 182, 212, 0.15) 0%, rgba(0,0,0,0) 70%);
-            border-radius: 50%;
-            z-index: 0;
-            pointer-events: none;
-            animation: pulseGlow 8s infinite alternate ease-in-out;
-        }
-
-        .bg-glow-2 {
-            position: fixed;
-            bottom: -10%;
-            right: 20%;
-            width: 450px;
-            height: 450px;
-            background: radial-gradient(circle, rgba(139, 92, 246, 0.15) 0%, rgba(0,0,0,0) 70%);
-            border-radius: 50%;
-            z-index: 0;
-            pointer-events: none;
-            animation: pulseGlow 10s infinite alternate ease-in-out;
-        }
-
-        @keyframes pulseGlow {
-            0% { transform: scale(1) translate(0, 0); opacity: 0.7; }
-            100% { transform: scale(1.2) translate(20px, -20px); opacity: 1; }
-        }
-
-        /* Profile Card */
-        .card {
-            position: relative;
-            z-index: 1;
+        .container {
+            max-width: 896px;
             width: 100%;
-            max-width: 680px;
-            background: var(--card-bg);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            border: 1px solid var(--card-border);
-            border-radius: 24px;
-            padding: 2.5rem;
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5),
-                        0 0 30px rgba(6, 182, 212, 0.05);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
-
-        .card:hover {
-            border-color: rgba(6, 182, 212, 0.25);
-            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6),
-                        0 0 40px rgba(6, 182, 212, 0.12);
+        hr {
+            border: 0;
+            border-top: 1px solid #30363d;
+            margin: 24px 0;
         }
-
-        /* Header Section */
-        .header {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-            margin-bottom: 2rem;
+        img {
+            max-width: 100%;
+            height: auto;
         }
-
-        .avatar-wrapper {
-            position: relative;
-            margin-bottom: 1.25rem;
-        }
-
-        .avatar {
-            width: 96px;
-            height: 96px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, var(--accent-cyan), var(--accent-purple));
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2rem;
-            font-weight: 700;
-            color: #ffffff;
-            box-shadow: 0 8px 25px rgba(6, 182, 212, 0.3);
-            border: 3px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .status-dot {
-            position: absolute;
-            bottom: 4px;
-            right: 4px;
-            width: 16px;
-            height: 16px;
-            background-color: var(--accent-emerald);
-            border: 3px solid #0b0f19;
-            border-radius: 50%;
-            box-shadow: 0 0 10px var(--accent-emerald);
-        }
-
-        .name {
-            font-size: 1.75rem;
-            font-weight: 800;
-            letter-spacing: -0.02em;
-            background: linear-gradient(135deg, #ffffff 0%, #d1d5db 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            margin-bottom: 0.5rem;
-        }
-
-        .role-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.35rem 1rem;
-            border-radius: 9999px;
-            background: linear-gradient(90deg, rgba(6, 182, 212, 0.15), rgba(59, 130, 246, 0.15));
-            border: 1px solid rgba(6, 182, 212, 0.3);
-            color: var(--accent-cyan);
-            font-size: 0.875rem;
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-        }
-
-        .sub-role {
-            font-size: 0.95rem;
-            color: var(--text-muted);
-            font-weight: 400;
-        }
-
-        /* Fun Fact / Quote Box */
-        .fact-box {
-            background: rgba(31, 41, 55, 0.4);
-            border-left: 3px solid var(--accent-cyan);
-            padding: 1rem 1.25rem;
-            border-radius: 0 12px 12px 0;
-            margin-bottom: 2rem;
-            font-size: 0.925rem;
-            color: #e5e7eb;
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-        }
-
-        .fact-icon {
-            font-size: 1.25rem;
-            flex-shrink: 0;
-        }
-
-        /* Section Titles */
-        .section-title {
-            font-size: 1rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.08em;
-            color: var(--text-muted);
-            margin-bottom: 1rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .section-title::after {
-            content: '';
-            flex: 1;
-            height: 1px;
-            background: rgba(255, 255, 255, 0.08);
-        }
-
-        /* Skill Groups */
-        .skills-container {
-            display: flex;
-            flex-direction: column;
-            gap: 1.25rem;
-            margin-bottom: 2rem;
-        }
-
-        .skill-group-title {
-            font-size: 0.825rem;
-            font-weight: 600;
-            color: var(--accent-cyan);
-            margin-bottom: 0.5rem;
-        }
-
-        .skill-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-        }
-
-        .tag {
-            background: var(--badge-bg);
-            border: 1px solid var(--badge-border);
-            color: #e5e7eb;
-            padding: 0.4rem 0.8rem;
-            border-radius: 8px;
-            font-size: 0.85rem;
-            font-weight: 500;
-            transition: all 0.2s ease;
-            cursor: default;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.35rem;
-        }
-
-        .tag:hover {
-            background: rgba(59, 130, 246, 0.15);
-            border-color: rgba(59, 130, 246, 0.4);
-            color: #ffffff;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.2);
-        }
-
-        .tag.highlight {
-            background: rgba(139, 92, 246, 0.12);
-            border-color: rgba(139, 92, 246, 0.3);
-            color: #d8b4fe;
-        }
-
-        .tag.highlight:hover {
-            background: rgba(139, 92, 246, 0.25);
-            border-color: rgba(139, 92, 246, 0.5);
-            color: #ffffff;
-            box-shadow: 0 4px 12px rgba(139, 92, 246, 0.3);
-        }
-
-        /* Footer / Action Buttons */
-        .footer {
-            display: flex;
-            justify-content: center;
-            gap: 1rem;
-            padding-top: 1rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.08);
-        }
-
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.65rem 1.25rem;
-            border-radius: 10px;
-            font-size: 0.875rem;
-            font-weight: 600;
+        a {
+            color: #58a6ff;
             text-decoration: none;
-            transition: all 0.2s ease;
-            cursor: pointer;
-        }
-
-        .btn-primary {
-            background: linear-gradient(135deg, var(--accent-cyan), var(--accent-blue));
-            color: #ffffff;
-            border: none;
-            box-shadow: 0 4px 15px rgba(6, 182, 212, 0.3);
-        }
-
-        .btn-primary:hover {
-            opacity: 0.95;
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(6, 182, 212, 0.4);
-        }
-
-        .btn-secondary {
-            background: rgba(255, 255, 255, 0.05);
-            color: var(--text-main);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .btn-secondary:hover {
-            background: rgba(255, 255, 255, 0.1);
-            border-color: rgba(255, 255, 255, 0.2);
-            transform: translateY(-2px);
-        }
-
-        /* Responsive tweaks */
-        @media (max-width: 480px) {
-            .card {
-                padding: 1.5rem;
-            }
-            .name {
-                font-size: 1.4rem;
-            }
-            .footer {
-                flex-direction: column;
-            }
-            .btn {
-                justify-content: center;
-            }
         }
     </style>
 </head>
 <body>
+    <div class="container">
+        <div align="center">
 
-    <div class="bg-glow-1"></div>
-    <div class="bg-glow-2"></div>
-
-    <main class="card">
-        <!-- Header -->
-        <header class="header">
-            <div class="avatar-wrapper">
-                <div class="avatar">MS</div>
-                <div class="status-dot" title="Available for opportunities"></div>
-            </div>
-            <h1 class="name">Mohamad Syahmi Bin Abdul Karim</h1>
-            <div class="role-badge">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
-                Aspiring DevOps Engineer
-            </div>
-            <p class="sub-role">Former IT Executive &amp; Web Developer</p>
-        </header>
-
-        <!-- Fun Fact / Highlight -->
-        <div class="fact-box">
-            <span class="fact-icon">🚀</span>
             <div>
-                <strong>Fakta Menarik:</strong> Building, automating, &amp; deploying with modern technologies
+                <a href="https://git.io/typing-svg"><img src="https://readme-typing-svg.demolab.com/?lines=Aspiring%20DevOps%20Engineer;Building%2C%20automating%20%26%20deploying%20with%20modern%20technologies;Currently%20learning%20DevOps%2C%20Cloud%20%26%20CI%2FCD&font=Fira+Code&size=22&duration=3000&pause=1000&color=FFFFFF&center=true&vCenter=true&width=800&height=50" alt="Typing SVG" /></a>
+
+                <p><strong><span style="font-size: 2em;">Mohamad Syahmi</span></strong></p>
+
+                <p>
+                    <a href="https://www.linkedin.com/in/mohdsyahmiabdulkarim/" target="_blank"><img src="https://img.shields.io/badge/LinkedIn-000?style=flat-square&logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0id2hpdGUiPjxwYXRoIGQ9Ik0yMC40NDcgMjAuNDUyaC0zLjU1NHYtNS41NjljMC0xLjMyOC0uMDI3LTMuMDM3LTEuODUzLTMuMDM3LTEuODUzIDAtMi4xMzYgMS40NDUtMi4xMzYgMi45Mzl2NS42NjdIOS4zNTFWOWgzLjQxNHYxLjU2MWguMDQ2Yy40NzctLjkgMS42MzctMS44NSAzLjM3LTEuODUgMy42MDEgMCA0LjI2NyAyLjM3IDQuMjY3IDUuNDU1djYuMjg2ek01LjMzNyA3LjQzM2MtMS4xNDQgMC0yLjA2My0uOTI2LTIuMDYzLTIuMDY1IDAtMS4xMzguOTItMi4wNjMgMi4wNjMtMi4wNjMgMS4xNCAwIDIu064LjkyNSAyLjA2NCAyLjA2MyAwIDEuMTM5LS45MjUgMi4wNjUtMi4wNjQgMi4wNjV6bTEuNzgyIDEzLjAxOUgzLjU1NVY5aDMuNTY4djExLjQ1MnpNMjIuMjI1IDBIMS43NzFDLjc5MiAwIDAgLjc3NCAwIDEuNzI5djIwLjU0MkMwIDIzLjIyNy43OTIgMjQgMS43NzEgMjRoMjAuNDUxQzIzLjIgMjQgMjQgMjMuMjI3IDI0IDIyLjI3MVYxLjcyOUMyNCAuNzc0IDIzLjIgMCAyMi4yMjIgMGguMDAzeiIvPjwvc3ZnPg==&logoColor=white" alt="LinkedIn" /></a>
+                    <a href="mailto:msyahmi.karim@gmail.com" target="_blank"><img src="https://img.shields.io/badge/Email-000?style=flat-square&logo=gmail&logoColor=white" alt="Email" /></a>
+                </p>
             </div>
+
+            <hr>
+
+            <div>
+                <img src="badges.svg?v=2" alt="Tech Stack" style="max-width: 800px;" />
+            </div>
+
+            <hr>
+
+            <div>
+                <p>
+                    <a href="https://www.linkedin.com/in/mohdsyahmiabdulkarim/" target="_blank"><img src="https://img.shields.io/badge/LinkedIn-000?style=flat-square&logo=linkedin&logoColor=white" alt="LinkedIn" /></a>
+                    <a href="mailto:msyahmi.karim@gmail.com" target="_blank"><img src="https://img.shields.io/badge/Email-000?style=flat-square&logo=gmail&logoColor=white" alt="Email" /></a>
+                    <a href="https://github.com/msyahmikarim" target="_blank"><img src="https://img.shields.io/badge/GitHub-000?style=flat-square&logo=github&logoColor=white" alt="GitHub" /></a>
+                </p>
+
+                <br>
+
+                <img src="https://komarev.com/ghpvc/?username=msyahmikarim&style=flat-square&color=000000&label=views" alt="Profile Views" />
+            </div>
+
         </div>
-
-        <!-- Skills Section -->
-        <section>
-            <h2 class="section-title">Kemahiran &amp; Teknologi</h2>
-            
-            <div class="skills-container">
-                <!-- Cloud & DevOps -->
-                <div>
-                    <div class="skill-group-title">Cloud &amp; DevOps Infrastructure</div>
-                    <div class="skill-tags">
-                        <span class="tag">Linux</span>
-                        <span class="tag">Git</span>
-                        <span class="tag">AWS</span>
-                        <span class="tag">Cloudflare</span>
-                        <span class="tag">Docker</span>
-                        <span class="tag">GitHub Actions</span>
-                        <span class="tag">Terraform</span>
-                        <span class="tag">Ansible</span>
-                        <span class="tag">Prometheus</span>
-                        <span class="tag">Grafana</span>
-                        <span class="tag">cPanel</span>
-                    </div>
-                </div>
-
-                <!-- AI Agents & Workflows -->
-                <div>
-                    <div class="skill-group-title">AI Agents &amp; Automation</div>
-                    <div class="skill-tags">
-                        <span class="tag highlight">Claude Code</span>
-                        <span class="tag highlight">AI Agents</span>
-                        <span class="tag highlight">MCP</span>
-                    </div>
-                </div>
-
-                <!-- Web Development & Tooling -->
-                <div>
-                    <div class="skill-group-title">Web Development &amp; Database</div>
-                    <div class="skill-tags">
-                        <span class="tag">Laravel</span>
-                        <span class="tag">React</span>
-                        <span class="tag">HTML</span>
-                        <span class="tag">CSS</span>
-                        <span class="tag">JavaScript</span>
-                        <span class="tag">TypeScript</span>
-                        <span class="tag">PHP</span>
-                        <span class="tag">Node.js</span>
-                        <span class="tag">PowerShell</span>
-                        <span class="tag">MySQL</span>
-                        <span class="tag">PostgreSQL</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Footer Actions -->
-        <footer class="footer">
-            <a href="mailto:contact@example.com" class="btn btn-primary">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-                Hubungi Saya
-            </a>
-            <a href="#" class="btn btn-secondary">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-                GitHub Profile
-            </a>
-        </footer>
-    </main>
-
+    </div>
 </body>
 </html>
